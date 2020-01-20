@@ -173,36 +173,131 @@ public class Calculadora extends JFrame {
 		contentPane.add(btnEqual);
 		btnEqual.addActionListener(ev->{
 			
+      //-------------- Operacao de adicao --------------//
 			if(operationType == 1) {
 				
 				if(layers[2] > 0) 
 				{
 					equal = Integer.parseInt(numberCamp.getText());
 					layers[2] = equal;
-					layers[2] = layers[2] + layers[2];
+					layers[2] = layers[1] + layers[2];
 					numberCamp.setText(""+layers[2]);
 				}
-					
+				
+				else
+				{
 				campTwo = Integer.parseInt(numberCamp.getText());
 				layers[1] = campTwo;
 				layers[2] = layers[0] + layers[1];
 				layers[0] = 0;
 				reserveNumber.setText("");
 				numberCamp.setText(""+layers[2]);
-				System.out.println("\n---------------------------------\n");
-				System.out.println("\n"+layers[0]+"\n");
-				System.out.println("\n"+layers[1]+"\n");
-				System.out.println("\n"+layers[2]+"\n");
-				System.out.println("\n"+operationType+"\n");
-				System.out.println("\n---------------------------------\n");
-					
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				}	
 					
 			}
+		//-------------- Operacao de subtracao --------------//
+			else if (operationType == 2) {
+				
+				if(layers[2] > 0) 
+				{
+					equal = Integer.parseInt(numberCamp.getText());
+					layers[2] = equal;
+					layers[2] = layers[2] - layers[1];
+					numberCamp.setText(""+layers[2]);
+				}
+				else if(layers[2] < 0) 
+				{
+					equal = Integer.parseInt(numberCamp.getText());
+					layers[2] = equal;
+					layers[2] = layers[1] - layers[2];
+					numberCamp.setText("-"+layers[2]);
+				}
+				else
+				{
+					campTwo = Integer.parseInt(numberCamp.getText());
+					layers[1] = campTwo;
+					layers[2] = layers[0] - layers[1];
+					layers[0] = 0;
+					reserveNumber.setText("");
+					numberCamp.setText(""+layers[2]);
+					System.out.println("\n---------------------------------");
+					System.out.println(layers[0]);
+					System.out.println(layers[1]);
+					System.out.println(layers[2]);
+					System.out.println("\n"+operationType);
+					System.out.println("---------------------------------\n");
+				}
+			}
 			
+		//--------------Operacao de multiplicacao---------------//
+			else if (operationType == 3) {
+				
+				if(layers[2] > 0) 
+				{
+					equal = Integer.parseInt(numberCamp.getText());
+					layers[2] = equal;
+					layers[2] = layers[1] * layers[2];
+					numberCamp.setText(""+layers[2]);
+				}
+				
+				else
+				{
+					campTwo = Integer.parseInt(numberCamp.getText());
+					layers[1] = campTwo;
+					layers[2] = layers[0] * layers[1];
+					layers[0] = 0;
+					reserveNumber.setText("");
+					numberCamp.setText(""+layers[2]);
+					System.out.println("\n---------------------------------");
+					System.out.println(layers[0]);
+					System.out.println(layers[1]);
+					System.out.println(layers[2]);
+					System.out.println("\n"+operationType);
+					System.out.println("---------------------------------\n");
+				}
+			}
 			
+		//---------------Operacao de divisao--------------------//
+			else if (operationType == 4) {
+				
+				if(layers[2] > 0) 
+				{
+					equal = Integer.parseInt(numberCamp.getText());
+					layers[2] = equal;
+					layers[2] = layers[2] / layers[1];
+					numberCamp.setText(""+layers[2]);
+				}
+				
+				else
+				{
+					campTwo = Integer.parseInt(numberCamp.getText());
+					layers[1] = campTwo;
+					layers[2] = layers[0] / layers[1];
+					layers[0] = 0;
+					reserveNumber.setText("");
+					numberCamp.setText(""+layers[2]);
+					System.out.println("\n---------------------------------");
+					System.out.println(layers[0]);
+					System.out.println(layers[1]);
+					System.out.println(layers[2]);
+					System.out.println("\n"+operationType);
+					System.out.println("---------------------------------\n");
+				}
+			}
 		});
 		
-				
+		
+		
+		
+		
+		
+		//------------funcoes dos botoes de operacao--------------------//
 		JButton btnPlus = new JButton("+");
 		btnPlus.setBounds(235, 221, 58, 62);
 		contentPane.add(btnPlus);
@@ -215,12 +310,12 @@ public class Calculadora extends JFrame {
 					if(layers[0] == 0) {
 						campOne = Integer.parseInt(numberCamp.getText());
 						layers[0] = campOne;
-						System.out.println("\n---------------------------------\n");
-						System.out.println("\n"+layers[0]+"\n");
-						System.out.println("\n"+layers[1]+"\n");
-						System.out.println("\n"+layers[2]+"\n");
-						System.out.println("\n"+operationType+"\n");
-						System.out.println("\n---------------------------------\n");
+						System.out.println("\n---------------------------------");
+						System.out.println(layers[0]);
+						System.out.println(layers[1]);
+						System.out.println(layers[2]);
+						System.out.println("\n"+operationType);
+						System.out.println("---------------------------------\n");
 						reserveCamp = Integer.parseInt(reserveNumber.getText() + layers[0]);
 						reserveNumber.setText(""+reserveCamp);
 						numberCamp.setText("0");
@@ -230,12 +325,12 @@ public class Calculadora extends JFrame {
 						
 						campTwo = Integer.parseInt(numberCamp.getText());
 						layers[1] = campTwo;
-						System.out.println("\n---------------------------------\n");
-						System.out.println("\n"+layers[0]+"\n");
-						System.out.println("\n"+layers[1]+"\n");
-						System.out.println("\n"+layers[2]+"\n");
-						System.out.println("\n"+operationType+"\n");
-						System.out.println("\n---------------------------------\n");
+						System.out.println("\n---------------------------------");
+						System.out.println(layers[0]);
+						System.out.println(layers[1]);
+						System.out.println(layers[2]);
+						System.out.println("\n"+operationType);
+						System.out.println("---------------------------------\n");
 						layers[0] = layers[0] + layers[1];
 						reserveNumber.setText(""+layers[0]);
 						
@@ -245,14 +340,120 @@ public class Calculadora extends JFrame {
 		JButton btnMinus = new JButton("-");
 		btnMinus.setBounds(235, 159, 58, 51);
 		contentPane.add(btnMinus);
+		btnMinus.addActionListener(ev ->{
+			
+			layers[2] = 0;
+			
+			operationType = 2;
+			
+			if(layers[0] == 0) {
+				campOne = Integer.parseInt(numberCamp.getText());
+				layers[0] = campOne;
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				reserveCamp = Integer.parseInt(reserveNumber.getText() + layers[0]);
+				reserveNumber.setText(""+reserveCamp);
+				numberCamp.setText("0");
+				}
+			
+			else{
+				
+				campTwo = Integer.parseInt(numberCamp.getText());
+				layers[1] = campTwo;
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				layers[0] = layers[0] - layers[1];
+				reserveNumber.setText(""+layers[0]);
+				
+			}
+			
+		});
 		
 		JButton btnX = new JButton("X");
 		btnX.setBounds(167, 159, 58, 51);
 		contentPane.add(btnX);
+		btnX.addActionListener(ev->{
+
+			layers[2] = 0;
+			
+			operationType = 3;
+			
+			if(layers[0] == 0) {
+				campOne = Integer.parseInt(numberCamp.getText());
+				layers[0] = campOne;
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				reserveCamp = Integer.parseInt(reserveNumber.getText() + layers[0]);
+				reserveNumber.setText(""+reserveCamp);
+				numberCamp.setText("0");
+				}
+			
+			else{
+				
+				campTwo = Integer.parseInt(numberCamp.getText());
+				layers[1] = campTwo;
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				layers[0] = layers[0] * layers[1];
+				reserveNumber.setText(""+layers[0]);
+				
+			}
+			
+		});
 		
 		JButton btnDivision = new JButton("/");
 		btnDivision.setBounds(167, 221, 60, 62);
 		contentPane.add(btnDivision);
+		btnDivision.addActionListener(ev->{
+			layers[2] = 0;
+			
+			operationType = 4;
+			
+			if(layers[0] == 0) {
+				campOne = Integer.parseInt(numberCamp.getText());
+				layers[0] = campOne;
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				reserveCamp = Integer.parseInt(reserveNumber.getText() + layers[0]);
+				reserveNumber.setText(""+reserveCamp);
+				numberCamp.setText("0");
+				}
+			
+			else{
+				
+				campTwo = Integer.parseInt(numberCamp.getText());
+				layers[1] = campTwo;
+				System.out.println("\n---------------------------------");
+				System.out.println(layers[0]);
+				System.out.println(layers[1]);
+				System.out.println(layers[2]);
+				System.out.println("\n"+operationType);
+				System.out.println("---------------------------------\n");
+				layers[0] = layers[0] / layers[1];
+				reserveNumber.setText(""+layers[0]);
+				
+			}
+		});
 		
 		JButton apagarTudo = new JButton("CE");
 		apagarTudo.setBounds(167, 97, 126, 51);
